@@ -3,12 +3,14 @@ class BooksController < ApplicationController
 
   def index
     render json: {
-      books: Book.all
+      # books: Book.all
+      books: current_user.books
     }, status: :ok
   end
 
   def create
-    book = Book.new(book_params)
+    # book = Book.new(book_params)
+    book = current_user.books.new(book_params)
 
     if book.save
       render json: {
@@ -42,6 +44,11 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def set_post
+    @book = Book.find(params[:id])
+    @book = current.books.find(params[:id])
+  end
 
   def set_book
     @book = Book.find(params[:id])
