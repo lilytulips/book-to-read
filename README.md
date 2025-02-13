@@ -37,6 +37,8 @@ rails db:create db:migrate db:seed
   cd book-to-read-frontend && npm install 
 ```
 
+refer here: https://www.louisramos.dev/blogs/rails-api-authentication-with-devise-and-json-web-tokens to set up your JWT Secret Token
+
 ## Run the App 🚀  
 
 ### Backend  
@@ -51,5 +53,30 @@ npm run dev
 ```
 Runs on: http://localhost:5173 (default Vite port)
 
+## Running Tests 🧪
+### Install Cypress
+
+If you haven't installed Cypress yet, run:
+```bash
+npm install cypress --save-dev
+```
+### Open Cypress UI
+
+To run Cypress in interactive mode:
+```bash
+npx cypress open
+```
+This opens the Cypress Test Runner, where you can run tests manually.
+
+### Run Cypress in Headless Mode
+
+To execute all tests in headless mode (without opening the UI):
+```bash
+npx cypress run
+```
+Run Specific Test File
+```bash
+npx cypress run --spec cypress/e2e/my-test.cy.js
+```
  
 
